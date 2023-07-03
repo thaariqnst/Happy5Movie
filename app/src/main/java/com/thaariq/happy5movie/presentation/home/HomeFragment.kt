@@ -9,10 +9,12 @@ import androidx.fragment.app.viewModels
 import com.thaariq.happy5movie.data.responses.GenreItem
 import com.thaariq.happy5movie.data.responses.GenreResponse
 import com.thaariq.happy5movie.data.responses.ShowingMovie
+import com.thaariq.happy5movie.data.responses.TopRatedMovie
 import com.thaariq.happy5movie.databinding.FragmentHomeBinding
 import com.thaariq.happy5movie.presentation.MovieViewModel
 import com.thaariq.happy5movie.presentation.home.adapter.HomeGenreAdapter
 import com.thaariq.happy5movie.presentation.home.adapter.ShowingMovieAdapter
+import com.thaariq.happy5movie.presentation.home.adapter.TopRatedMovieAdapter
 
 class HomeFragment : Fragment() {
 
@@ -34,6 +36,10 @@ class HomeFragment : Fragment() {
         viewModel.showingMovie.observe(viewLifecycleOwner){
             setupShowingMovieRV(it)
         }
+        viewModel.topRatedMovie()
+        viewModel.topRatedMovie.observe(viewLifecycleOwner){
+            setupTopRatedMovieRV(it)
+        }
         return binding.root
     }
 
@@ -49,6 +55,13 @@ class HomeFragment : Fragment() {
             val showingAdapter = ShowingMovieAdapter()
             showingAdapter.setData(data)
             adapter = showingAdapter
+        }
+    }
+    private fun setupTopRatedMovieRV(data : List<TopRatedMovie>){
+        binding.rvPopular.apply {
+            val topRatedAdapter = TopRatedMovieAdapter()
+            topRatedAdapter.setData(data)
+            adapter = topRatedAdapter
         }
     }
 
