@@ -8,9 +8,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.thaariq.happy5movie.data.responses.GenreItem
 import com.thaariq.happy5movie.data.responses.GenreResponse
+import com.thaariq.happy5movie.data.responses.ShowingMovie
 import com.thaariq.happy5movie.databinding.FragmentHomeBinding
 import com.thaariq.happy5movie.presentation.MovieViewModel
 import com.thaariq.happy5movie.presentation.home.adapter.HomeGenreAdapter
+import com.thaariq.happy5movie.presentation.home.adapter.ShowingMovieAdapter
 
 class HomeFragment : Fragment() {
 
@@ -27,6 +29,11 @@ class HomeFragment : Fragment() {
         viewModel.genre.observe(viewLifecycleOwner){
             setupGenreRV(it)
         }
+
+        viewModel.showingMovie()
+        viewModel.showingMovie.observe(viewLifecycleOwner){
+            setupShowingMovieRV(it)
+        }
         return binding.root
     }
 
@@ -36,7 +43,13 @@ class HomeFragment : Fragment() {
             genreAdapter.setData(data)
             adapter = genreAdapter
         }
-
+    }
+    private fun setupShowingMovieRV(data: List<ShowingMovie>){
+        binding.rvLatest.apply {
+            val showingAdapter = ShowingMovieAdapter()
+            showingAdapter.setData(data)
+            adapter = showingAdapter
+        }
     }
 
 }
