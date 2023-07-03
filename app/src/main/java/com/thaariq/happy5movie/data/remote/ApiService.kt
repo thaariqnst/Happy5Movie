@@ -25,7 +25,7 @@ interface ApiService {
     fun getTopRated(
         @Query("api_key")
         apiKey : String  = BuildConfig.API_KEY
-    ): Call<TopRatedMovie>
+    ): Call<TopRatedMovieResponse>
 
     @GET("movie/{movie_id}")
     fun getDetails(

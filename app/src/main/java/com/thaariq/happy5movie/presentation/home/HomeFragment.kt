@@ -1,4 +1,4 @@
-package com.thaariq.happy5movie
+package com.thaariq.happy5movie.presentation.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
