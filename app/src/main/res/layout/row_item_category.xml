@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:backgroundTint="@color/material_dynamic_secondary50"
+        android:backgroundTint="@color/teal_700"
         app:cardCornerRadius="20dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,7 +21,7 @@
             android:paddingHorizontal="18dp">
 
             <TextView
-                android:id="@+id/tv_category"
+                android:id="@+id/tv_genre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="parent"
@@ -29,7 +29,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:textSize="12sp"
-                android:textColor="@color/material_on_primary_emphasis_high_type"
+                android:textColor="@color/white"
                 android:text="Category" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
