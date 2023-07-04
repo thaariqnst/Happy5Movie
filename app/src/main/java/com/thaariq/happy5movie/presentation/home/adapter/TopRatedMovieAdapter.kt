@@ -2,12 +2,14 @@ package com.thaariq.happy5movie.presentation.home.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.thaariq.happy5movie.BuildConfig
 import com.thaariq.happy5movie.data.responses.TopRatedMovie
 import com.thaariq.happy5movie.databinding.RowItemMovieBinding
+import com.thaariq.happy5movie.presentation.home.HomeFragmentDirections
 
 class TopRatedMovieAdapter : RecyclerView.Adapter<TopRatedMovieAdapter.MyViewHolder>() {
 
@@ -33,6 +35,12 @@ class TopRatedMovieAdapter : RecyclerView.Adapter<TopRatedMovieAdapter.MyViewHol
                 .load(BuildConfig.IMG_BASE_URL + topRatedItem.posterPath)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(imgMovie)
+        }
+
+        holder.itemView.setOnClickListener {
+            val movieIid = topRatedItem.id
+            val action = HomeFragmentDirections.actionHomeFragmentToDetailFragment(movieIid!!)
+            it.findNavController().navigate(action)
         }
     }
 
