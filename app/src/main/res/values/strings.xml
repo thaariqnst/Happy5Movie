@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Happy5 Movie</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_back">Welcome back!</string>
+    <string name="categories">Categories</string>
+    <string name="view_all">view all</string>
+    <string name="now_showing">Now Showing</string>
+    <string name="popular_movie">Popular Movie</string>
+    <string name="search">search</string>
+    <string name="star">4.0</string>
+    <string name="reviews">( 118k Reviews )</string>
+    <string name="movie_name">Movie Name No 1</string>
+    <string name="lorem_ipsum">Lorem Ipsum Dolor Sit Amet</string>
+    <string name="cast_name">Cast Name</string>
+    <string name="casts">Casts</string>
+    <string name="initials">CN</string>
+    <string name="as">As</string>
 </resources>
