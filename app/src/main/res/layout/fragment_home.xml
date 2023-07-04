@@ -123,19 +123,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 android:text="@string/now_showing" />
 
-            <TextView
-                android:id="@+id/tv_view_all_showing"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="3dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:textSize="15sp"
-                android:textColor="@color/teal_700"
-                android:text="@string/view_all" />
-
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_latest"
                 android:layout_width="match_parent"
@@ -171,19 +158,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 android:text="@string/popular_movie" />
-
-            <TextView
-                android:id="@+id/tv_view_all_popular"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="3dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:textSize="15sp"
-                android:textColor="@color/teal_700"
-                android:text="@string/view_all" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_popular"
