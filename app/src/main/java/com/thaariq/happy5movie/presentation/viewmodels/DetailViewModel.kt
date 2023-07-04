@@ -13,8 +13,8 @@ class DetailViewModel :ViewModel() {
 
     val movieDetail = MutableLiveData<DetailResponse>()
 
-    fun detail(movie_id : Int){
-        ApiConfig().getApiService().getDetails(movie_id).enqueue(object : Callback<DetailResponse> {
+    fun detail(movieId : Int){
+        ApiConfig().getApiService().getDetails(movieId).enqueue(object : Callback<DetailResponse> {
             override fun onResponse(
                 call: Call<DetailResponse>,
                 response: Response<DetailResponse>

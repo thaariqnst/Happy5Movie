@@ -10,11 +10,14 @@ import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.thaariq.happy5movie.BuildConfig
+import com.thaariq.happy5movie.data.responses.CastItem
 import com.thaariq.happy5movie.data.responses.GenresItem
 import com.thaariq.happy5movie.databinding.FragmentDetailBinding
 import com.thaariq.happy5movie.presentation.detail.adapter.DetailGenreAdapter
+import com.thaariq.happy5movie.presentation.home.adapter.CastAdapter
+import com.thaariq.happy5movie.presentation.viewmodels.CreditViewModel
 import com.thaariq.happy5movie.presentation.viewmodels.DetailViewModel
-import com.thaariq.happy5movie.utils.textOnParentheses
+import com.thaariq.happy5movie.utils.reviewTextOnParentheses
 import kotlin.math.roundToInt
 
 class DetailFragment : Fragment() {
@@ -22,6 +25,7 @@ class DetailFragment : Fragment() {
     private lateinit var binding : FragmentDetailBinding
 
     private val viewModel by viewModels<DetailViewModel>()
+    private val castViewModel by viewModels<CreditViewModel>()
 
     private val args : DetailFragmentArgs by navArgs()
 
@@ -45,7 +49,7 @@ class DetailFragment : Fragment() {
                 tvTitle.text = it.title
                 tvSinopsis.text = it.overview
                 tvVoteAverage.text = it.voteAverage?.roundToInt().toString()
-                tvVoteCount.text = textOnParentheses(it.voteCount.toString())
+                tvVoteCount.text = reviewTextOnParentheses(it.voteCount.toString())
 
                 Glide.with(imgPoster.context)
                     .load(BuildConfig.IMG_BASE_URL + it.posterPath)
@@ -54,6 +58,10 @@ class DetailFragment : Fragment() {
             }
             setupGenreRV(it.genres!!)
         }
+        castViewModel.credits(movieId)
+        castViewModel.credits.observe(viewLifecycleOwner){
+            setupCastRV(it.cast!!)
+        }
     }
 
     private fun setupGenreRV(data : List<GenresItem>){
@@ -61,6 +69,14 @@ class DetailFragment : Fragment() {
             val genreAdapter = DetailGenreAdapter()
             genreAdapter.setData(data)
             adapter = genreAdapter
+        }
+    }
+
+    private fun setupCastRV(data : List<CastItem>){
+        binding.rvCast.apply {
+            val castAdapter = CastAdapter()
+            castAdapter.setData(data)
+            adapter = castAdapter
         }
     }
 }

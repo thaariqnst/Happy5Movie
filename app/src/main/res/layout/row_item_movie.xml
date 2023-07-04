@@ -32,7 +32,7 @@
         app:layout_constraintEnd_toEndOf="@id/cv_movie"
         android:layout_marginTop="15dp"
         android:textSize="15sp"
-        android:textColor="@color/black"
-        android:text="Movie Name No 1" />
+        android:textColor="@color/white"
+        android:text="@string/movie_name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

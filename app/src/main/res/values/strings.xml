@@ -12,4 +12,7 @@
     <string name="reviews">( 118k Reviews )</string>
     <string name="movie_name">Movie Name No 1</string>
     <string name="lorem_ipsum">Lorem Ipsum Dolor Sit Amet</string>
+    <string name="cast_name">Cast Name</string>
+    <string name="casts">Casts</string>
+    <string name="initials">CN</string>
 </resources>
