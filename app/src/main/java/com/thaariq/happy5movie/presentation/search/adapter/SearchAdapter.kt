@@ -2,7 +2,6 @@ package com.thaariq.happy5movie.presentation.search.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.lifecycle.MutableLiveData
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -10,7 +9,6 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.thaariq.happy5movie.BuildConfig
 import com.thaariq.happy5movie.data.responses.SearchItem
 import com.thaariq.happy5movie.databinding.RowItemMovieBinding
-import com.thaariq.happy5movie.presentation.home.HomeFragmentDirections
 import com.thaariq.happy5movie.presentation.search.SearchFragmentDirections
 
 class SearchAdapter : RecyclerView.Adapter<SearchAdapter.MyViewHolder>() {

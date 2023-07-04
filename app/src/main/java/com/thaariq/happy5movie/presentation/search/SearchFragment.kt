@@ -3,18 +3,13 @@ package com.thaariq.happy5movie.presentation.search
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.thaariq.happy5movie.data.responses.SearchItem
-import com.thaariq.happy5movie.data.responses.ShowingMovieItem
 import com.thaariq.happy5movie.databinding.FragmentSearchBinding
-import com.thaariq.happy5movie.presentation.home.HomeFragmentDirections
-import com.thaariq.happy5movie.presentation.home.adapter.ShowingMovieAdapter
 import com.thaariq.happy5movie.presentation.search.adapter.SearchAdapter
 import com.thaariq.happy5movie.presentation.viewmodels.SearchViewModel
 
@@ -63,7 +58,6 @@ class SearchFragment : Fragment() {
             adapter = searchAdapter
         }
     }
-
     private fun performSearch(query : String){
         viewModel.search(query)
         viewModel.searchMovie.observe(viewLifecycleOwner){

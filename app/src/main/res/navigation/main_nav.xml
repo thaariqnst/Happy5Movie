@@ -12,8 +12,7 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_detailFragment"
-            app:destination="@id/detailFragment">
-        </action>
+            app:destination="@id/detailFragment" />
         <action
             android:id="@+id/action_homeFragment_to_searchFragment2"
             app:destination="@id/searchFragment2" />

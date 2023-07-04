@@ -24,9 +24,11 @@ class DetailFragment : Fragment() {
 
     private lateinit var binding : FragmentDetailBinding
 
+    // ViewModels
     private val viewModel by viewModels<DetailViewModel>()
     private val castViewModel by viewModels<CreditViewModel>()
 
+    // NavArgs
     private val args : DetailFragmentArgs by navArgs()
 
     override fun onCreateView(
@@ -40,7 +42,9 @@ class DetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Data Received from NavArgs
         val movieId = args.movieId
+
         //Log.i("MovieID", movieId.toString())
 
         viewModel.detail(movieId)
@@ -64,6 +68,7 @@ class DetailFragment : Fragment() {
         }
     }
 
+    // Setting up the RecyclerView for genres and casts
     private fun setupGenreRV(data : List<GenresItem>){
         binding.rvCategory.apply {
             val genreAdapter = DetailGenreAdapter()
@@ -71,7 +76,6 @@ class DetailFragment : Fragment() {
             adapter = genreAdapter
         }
     }
-
     private fun setupCastRV(data : List<CastItem>){
         binding.rvCast.apply {
             val castAdapter = CastAdapter()

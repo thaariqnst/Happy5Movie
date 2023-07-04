@@ -7,7 +7,6 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.thaariq.happy5movie.BuildConfig
 import com.thaariq.happy5movie.data.responses.CastItem
-import com.thaariq.happy5movie.data.responses.CreditsResponse
 import com.thaariq.happy5movie.databinding.RowItemCastBinding
 import com.thaariq.happy5movie.utils.getCastInitials
 import com.thaariq.happy5movie.utils.textOnParentheses
