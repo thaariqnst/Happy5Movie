@@ -42,4 +42,12 @@ interface ApiService {
         @Query("api_key")
         apiKey: String = BuildConfig.API_KEY
     ): Call<CreditsResponse>
+
+    @GET("search/movie")
+    fun searchMovie(
+        @Query("query")
+        query : String,
+        @Query("api_key")
+        apiKey: String = BuildConfig.API_KEY
+    ) : Call<SearchResponse>
 }

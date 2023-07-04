@@ -9,7 +9,8 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.32864583333333336" />
         <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.32864583333333336" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.3145833333333333" />
-        <entry key="app/src/main/res/layout/row_item_cast.xml" value="0.6080551147460938" />
+        <entry key="app/src/main/res/layout/fragment_search.xml" value="0.33535461425781254" />
+        <entry key="app/src/main/res/layout/row_item_cast.xml" value="0.1" />
         <entry key="app/src/main/res/layout/row_item_category.xml" value="0.32864583333333336" />
         <entry key="app/src/main/res/layout/row_item_movie.xml" value="0.32864583333333336" />
       </map>
