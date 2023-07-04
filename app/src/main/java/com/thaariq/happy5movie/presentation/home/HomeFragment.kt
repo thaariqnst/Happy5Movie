@@ -5,10 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.thaariq.happy5movie.data.responses.GenreItem
-import com.thaariq.happy5movie.data.responses.ShowingMovie
-import com.thaariq.happy5movie.data.responses.TopRatedMovie
+import com.thaariq.happy5movie.data.responses.ShowingMovieItem
+import com.thaariq.happy5movie.data.responses.TopRatedMovieItem
 import com.thaariq.happy5movie.databinding.FragmentHomeBinding
 import com.thaariq.happy5movie.presentation.viewmodels.MovieViewModel
 import com.thaariq.happy5movie.presentation.home.adapter.HomeGenreAdapter
@@ -39,6 +41,17 @@ class HomeFragment : Fragment() {
         viewModel.topRatedMovie.observe(viewLifecycleOwner){
             setupTopRatedMovieRV(it)
         }
+
+        binding.edtSearch.setOnEditorActionListener{ _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                val query = binding.edtSearch.text.toString().trim()
+                val action = HomeFragmentDirections.actionHomeFragmentToSearchFragment2(query)
+                findNavController().navigate(action)
+
+                return@setOnEditorActionListener true
+            }
+            return@setOnEditorActionListener false
+        }
         return binding.root
     }
 
@@ -49,14 +62,14 @@ class HomeFragment : Fragment() {
             adapter = genreAdapter
         }
     }
-    private fun setupShowingMovieRV(data: List<ShowingMovie>){
+    private fun setupShowingMovieRV(data: List<ShowingMovieItem>){
         binding.rvLatest.apply {
             val showingAdapter = ShowingMovieAdapter()
             showingAdapter.setData(data)
             adapter = showingAdapter
         }
     }
-    private fun setupTopRatedMovieRV(data : List<TopRatedMovie>){
+    private fun setupTopRatedMovieRV(data : List<TopRatedMovieItem>){
         binding.rvPopular.apply {
             val topRatedAdapter = TopRatedMovieAdapter()
             topRatedAdapter.setData(data)

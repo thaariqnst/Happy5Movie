@@ -9,7 +9,7 @@ import java.util.ArrayList
 
 class DetailGenreAdapter : RecyclerView.Adapter<DetailGenreAdapter.MyViewHolder>() {
 
-    val listGenre = ArrayList<GenresItem>()
+    private val listGenre = ArrayList<GenresItem>()
 
     class MyViewHolder(val binding: RowItemCategoryBinding) : RecyclerView.ViewHolder(binding.root)
 

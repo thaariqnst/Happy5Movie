@@ -14,6 +14,9 @@
             android:id="@+id/action_homeFragment_to_detailFragment"
             app:destination="@id/detailFragment">
         </action>
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment2"
+            app:destination="@id/searchFragment2" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
@@ -24,5 +27,17 @@
             android:name="movieId"
             app:argType="integer"
             android:defaultValue="238"/>
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment2"
+        android:name="com.thaariq.happy5movie.presentation.search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search">
+        <argument
+            android:name="search"
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_searchFragment2_to_detailFragment"
+            app:destination="@id/detailFragment" />
     </fragment>
 </navigation>

@@ -7,13 +7,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.thaariq.happy5movie.BuildConfig
-import com.thaariq.happy5movie.data.responses.ShowingMovie
+import com.thaariq.happy5movie.data.responses.ShowingMovieItem
 import com.thaariq.happy5movie.databinding.RowItemMovieBinding
 import com.thaariq.happy5movie.presentation.home.HomeFragmentDirections
 
 class ShowingMovieAdapter : RecyclerView.Adapter<ShowingMovieAdapter.MyViewHolder>() {
 
-    private var listShowing = ArrayList<ShowingMovie>()
+    private var listShowing = ArrayList<ShowingMovieItem>()
 
     class MyViewHolder(val binding: RowItemMovieBinding): RecyclerView.ViewHolder(binding.root)
 
@@ -44,7 +44,7 @@ class ShowingMovieAdapter : RecyclerView.Adapter<ShowingMovieAdapter.MyViewHolde
         }
     }
 
-    fun setData(data : List<ShowingMovie>){
+    fun setData(data : List<ShowingMovieItem>){
         listShowing.clear()
         listShowing.addAll(data)
     }

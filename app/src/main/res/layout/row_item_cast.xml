@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:padding="10dp">
@@ -14,23 +13,49 @@
         tools:src="@tools:sample/avatars"
         android:layout_gravity="center"/>
 
-    <TextView
-        android:id="@+id/tv_cast"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textSize="12sp"
-        android:textColor="@color/white"
-        android:text="@string/cast_name"/>
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+        <TextView
+            android:id="@+id/tv_cast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="5dp"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:text="@string/cast_name"/>
+
+        <TextView
+            android:id="@+id/tv_cast_initials"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:text="@string/initials"
+            android:layout_gravity="center_vertical"/>
+    </LinearLayout>
 
     <TextView
-        android:id="@+id/tv_cast_initials"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:textSize="12sp"
         android:textColor="@color/white"
-        android:text="@string/initials"
+        android:text="@string/as"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/tv_cast_char"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        android:text="@string/cast_name"
         android:layout_gravity="center"/>
 
 </LinearLayout>

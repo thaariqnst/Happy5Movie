@@ -34,6 +34,7 @@ class CastAdapter : RecyclerView.Adapter<CastAdapter.MyViewHolder>() {
         holder.binding.apply {
             tvCast.text = castItem.name
             tvCastInitials.text = textOnParentheses(castInitial)
+            tvCastChar.text = castItem.character
             Glide.with(imgCast.context)
                 .load(BuildConfig.IMG_BASE_URL + castItem.profilePath)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)

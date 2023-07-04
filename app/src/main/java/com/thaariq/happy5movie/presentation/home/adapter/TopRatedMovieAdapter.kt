@@ -7,13 +7,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.thaariq.happy5movie.BuildConfig
-import com.thaariq.happy5movie.data.responses.TopRatedMovie
+import com.thaariq.happy5movie.data.responses.TopRatedMovieItem
 import com.thaariq.happy5movie.databinding.RowItemMovieBinding
 import com.thaariq.happy5movie.presentation.home.HomeFragmentDirections
 
 class TopRatedMovieAdapter : RecyclerView.Adapter<TopRatedMovieAdapter.MyViewHolder>() {
 
-    private var listTopRated = ArrayList<TopRatedMovie>()
+    private var listTopRated = ArrayList<TopRatedMovieItem>()
 
     class MyViewHolder(val binding: RowItemMovieBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -44,7 +44,7 @@ class TopRatedMovieAdapter : RecyclerView.Adapter<TopRatedMovieAdapter.MyViewHol
         }
     }
 
-    fun setData(data : List<TopRatedMovie>){
+    fun setData(data : List<TopRatedMovieItem>){
         listTopRated.clear()
         listTopRated.addAll(data)
     }

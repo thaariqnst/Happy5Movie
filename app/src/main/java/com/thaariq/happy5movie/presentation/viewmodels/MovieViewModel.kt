@@ -12,8 +12,8 @@ import retrofit2.Response
 class MovieViewModel : ViewModel() {
 
     val genre = MutableLiveData<List<GenreItem>>()
-    val showingMovie = MutableLiveData<List<ShowingMovie>>()
-    val topRatedMovie = MutableLiveData<List<TopRatedMovie>>()
+    val showingMovie = MutableLiveData<List<ShowingMovieItem>>()
+    val topRatedMovie = MutableLiveData<List<TopRatedMovieItem>>()
 
     fun genre(){
         ApiConfig().getApiService().getGenres().enqueue(object : Callback<GenreResponse>{

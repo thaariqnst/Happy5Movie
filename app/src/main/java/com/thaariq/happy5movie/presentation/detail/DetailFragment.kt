@@ -17,8 +17,8 @@ import com.thaariq.happy5movie.presentation.detail.adapter.DetailGenreAdapter
 import com.thaariq.happy5movie.presentation.home.adapter.CastAdapter
 import com.thaariq.happy5movie.presentation.viewmodels.CreditViewModel
 import com.thaariq.happy5movie.presentation.viewmodels.DetailViewModel
-import com.thaariq.happy5movie.utils.reviewTextOnParentheses
-import kotlin.math.roundToInt
+import com.thaariq.happy5movie.utils.voteCountNumberFormatter
+import kotlin.math.roundToLong
 
 class DetailFragment : Fragment() {
 
@@ -48,8 +48,8 @@ class DetailFragment : Fragment() {
             binding.apply {
                 tvTitle.text = it.title
                 tvSinopsis.text = it.overview
-                tvVoteAverage.text = it.voteAverage?.roundToInt().toString()
-                tvVoteCount.text = reviewTextOnParentheses(it.voteCount.toString())
+                tvVoteAverage.text = it.voteAverage?.roundToLong().toString()
+                tvVoteCount.text = voteCountNumberFormatter(it.voteCount!!)
 
                 Glide.with(imgPoster.context)
                     .load(BuildConfig.IMG_BASE_URL + it.posterPath)
