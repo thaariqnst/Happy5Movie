@@ -8,4 +8,8 @@
     <string name="now_showing">Now Showing</string>
     <string name="popular_movie">Popular Movie</string>
     <string name="search">search</string>
+    <string name="star">4.0</string>
+    <string name="reviews">( 118k Reviews )</string>
+    <string name="movie_name">Movie Name No 1</string>
+    <string name="lorem_ipsum">Lorem Ipsum Dolor Sit Amet</string>
 </resources>

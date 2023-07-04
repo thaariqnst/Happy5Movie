@@ -14,6 +14,7 @@ class MovieViewModel : ViewModel() {
     val genre = MutableLiveData<List<GenreItem>>()
     val showingMovie = MutableLiveData<List<ShowingMovie>>()
     val topRatedMovie = MutableLiveData<List<TopRatedMovie>>()
+    val movieDetail = MutableLiveData<DetailResponse>()
 
     fun genre(){
         ApiConfig().getApiService().getGenres().enqueue(object : Callback<GenreResponse>{
@@ -57,6 +58,24 @@ class MovieViewModel : ViewModel() {
 
             override fun onFailure(call: Call<TopRatedMovieResponse>, t: Throwable) {
                 Log.e("DataTop", t.message.toString())
+            }
+
+        })
+    }
+
+    fun detail(movie_id : Int){
+        ApiConfig().getApiService().getDetails(movie_id).enqueue(object : Callback<DetailResponse>{
+            override fun onResponse(
+                call: Call<DetailResponse>,
+                response: Response<DetailResponse>
+            ) {
+                if (response.isSuccessful){
+                    movieDetail.postValue(response.body())
+                }
+            }
+
+            override fun onFailure(call: Call<DetailResponse>, t: Throwable) {
+                Log.e("DataDetail", t.message.toString())
             }
 
         })

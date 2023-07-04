@@ -38,7 +38,7 @@ interface ApiService {
     @GET("movie/{movie_id}/credits")
     fun getCredits(
         @Path("movie_id")
-        movie_id : Int?,
+        movie_id : Int,
         @Query("api_key")
         apiKey: String = BuildConfig.API_KEY
     ): Call<CreditsResponse>

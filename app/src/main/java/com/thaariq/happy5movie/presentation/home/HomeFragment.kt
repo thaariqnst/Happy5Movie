@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.thaariq.happy5movie.data.responses.GenreItem
-import com.thaariq.happy5movie.data.responses.GenreResponse
 import com.thaariq.happy5movie.data.responses.ShowingMovie
 import com.thaariq.happy5movie.data.responses.TopRatedMovie
 import com.thaariq.happy5movie.databinding.FragmentHomeBinding
