@@ -10,7 +10,7 @@ import com.thaariq.happy5movie.data.responses.GenreItem
 import com.thaariq.happy5movie.data.responses.ShowingMovie
 import com.thaariq.happy5movie.data.responses.TopRatedMovie
 import com.thaariq.happy5movie.databinding.FragmentHomeBinding
-import com.thaariq.happy5movie.presentation.MovieViewModel
+import com.thaariq.happy5movie.presentation.viewmodels.MovieViewModel
 import com.thaariq.happy5movie.presentation.home.adapter.HomeGenreAdapter
 import com.thaariq.happy5movie.presentation.home.adapter.ShowingMovieAdapter
 import com.thaariq.happy5movie.presentation.home.adapter.TopRatedMovieAdapter

@@ -12,8 +12,8 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.thaariq.happy5movie.BuildConfig
 import com.thaariq.happy5movie.data.responses.GenresItem
 import com.thaariq.happy5movie.databinding.FragmentDetailBinding
-import com.thaariq.happy5movie.presentation.MovieViewModel
 import com.thaariq.happy5movie.presentation.detail.adapter.DetailGenreAdapter
+import com.thaariq.happy5movie.presentation.viewmodels.DetailViewModel
 import com.thaariq.happy5movie.utils.textOnParentheses
 import kotlin.math.roundToInt
 
@@ -21,7 +21,7 @@ class DetailFragment : Fragment() {
 
     private lateinit var binding : FragmentDetailBinding
 
-    private val viewModel by viewModels<MovieViewModel>()
+    private val viewModel by viewModels<DetailViewModel>()
 
     private val args : DetailFragmentArgs by navArgs()
 
