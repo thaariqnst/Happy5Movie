@@ -25,6 +25,7 @@ Before downloading this project, there are some things that you need to know abo
 - Kotlin `1.5.*`
 - Gradle `7.2`
 - Android Gradle Plugin `7.1.1`
+- jdk `11`
 
 
 ### Installation
